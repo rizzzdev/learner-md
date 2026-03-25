@@ -1,0 +1,1 @@
+{ "title": "Event Delegation dan Traversal DOM", "description": "Teknik efisien mengelola banyak event dengan satu listener di elemen induk, dan cara menavigasi pohon DOM: parent, sibling, dan children." }

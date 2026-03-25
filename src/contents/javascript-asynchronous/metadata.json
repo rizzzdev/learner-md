@@ -1,0 +1,1 @@
+{ "title": "Javascript Asynchronous", "description": "Memahami cara JavaScript menangani operasi yang memakan waktu seperti request data ke server, menggunakan Callback, Promise, dan Async/Await." }

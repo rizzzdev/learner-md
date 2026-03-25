@@ -1,0 +1,1 @@
+{ "title": "Event Loop", "description": "Memahami mesin 'penjadwal' di balik JavaScript yang membuat satu thread bisa menangani banyak operasi asinkronus sekaligus tanpa macet." }
