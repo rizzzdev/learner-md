@@ -10,8 +10,13 @@ export default function FolderCard({ course, onClick }) {
       
       <div className='flex flex-col justify-center items-center gap-2 mb-4'>
 
-      <h3 className="w-full text-xl font-bold mb-2 group-hover:text-blue-400 text-gray-100 transition-colors relative z-10">
-        {course.title}
+      <h3 className="w-full text-xl font-bold mb-2 group-hover:text-blue-400 text-gray-100 transition-colors relative z-10 flex items-start gap-2">
+        {course.prefix && (
+          <span className="shrink-0 bg-blue-900/60 text-blue-300 w-7 h-7 rounded-md text-xs font-mono border border-blue-700/50 flex items-center justify-center shadow-sm">
+            {course.prefix}
+          </span>
+        )}
+        <span>{course.title}</span>
       </h3>
 
       {course.description && (

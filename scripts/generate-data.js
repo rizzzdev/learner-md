@@ -79,10 +79,13 @@ function generateData() {
         });
       }
 
-      // Urutkan materi berdasarkan nama folder (natural sort)
-      materials.sort((a, b) =>
-        a.slug.localeCompare(b.slug, undefined, { numeric: true, sensitivity: 'base' })
-      );
+      // Urutkan materi berdasarkan prefix (angka), fallback ke slug
+      materials.sort((a, b) => {
+        const prefixA = a.prefix ? parseInt(a.prefix, 10) : Infinity;
+        const prefixB = b.prefix ? parseInt(b.prefix, 10) : Infinity;
+        if (prefixA !== prefixB) return prefixA - prefixB;
+        return a.slug.localeCompare(b.slug, undefined, { numeric: true, sensitivity: 'base' });
+      });
 
       courses.push({
         slug: outerDir.name,
@@ -93,10 +96,13 @@ function generateData() {
       });
     }
 
-    // Urutkan kursus berdasarkan nama folder
-    courses.sort((a, b) =>
-      a.slug.localeCompare(b.slug, undefined, { numeric: true, sensitivity: 'base' })
-    );
+    // Urutkan kursus berdasarkan prefix (angka), fallback ke slug
+    courses.sort((a, b) => {
+      const prefixA = a.prefix ? parseInt(a.prefix, 10) : Infinity;
+      const prefixB = b.prefix ? parseInt(b.prefix, 10) : Infinity;
+      if (prefixA !== prefixB) return prefixA - prefixB;
+      return a.slug.localeCompare(b.slug, undefined, { numeric: true, sensitivity: 'base' });
+    });
 
     fs.writeFileSync(outputFile, JSON.stringify(courses, null, 2));
     console.log(`Successfully generated ${outputFile}`);
