@@ -1,0 +1,4 @@
+{
+  "title": "5. Static Files dan Template Engine",
+  "description": "Cara menyajikan file statis (gambar, CSS, JS) dan menggunakan Template Engine (EJS) untuk membuat halaman HTML yang dinamis."
+}
