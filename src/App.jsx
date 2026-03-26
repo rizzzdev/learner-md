@@ -13,7 +13,7 @@ function App() {
   const [selectedMaterial, setSelectedMaterial] = useState(null)
 
   useEffect(() => {
-    fetch('/api/data')
+    fetch('/data.json')
       .then(res => {
         if (!res.ok) throw new Error('Gagal mengambil data dari server')
         return res.json()
